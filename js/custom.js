@@ -62,18 +62,23 @@ function prevStep() {
 
 function animateProgress() {
     let progress = 0;
+      const progressCircle = document.getElementById("progressCircle");
+    const totalLength = 691; // 2 * π * 110 (circumference)
     const interval = setInterval(() => {
-        if (progress >= 67) {  // Stop progress at 67%
+        if (progress >= 100) {  // Stop progress at 67%
             clearInterval(interval);
             setTimeout(showResultScreen, 500); // Show result after a short delay
         } else {
             progress++;
-            let offset = 440 - (progress / 100) * 440;
+            let offset = totalLength - (progress / 100) * totalLength;
+            progressCircle.style.strokeDashoffset = offset;
             progressBar.style.strokeDashoffset = offset;
             progressText.innerText = `${progress}%`;
         }
     }, 50);
 }
+
+
 function showResultScreen() {
     resultContainer.innerHTML = `
         <div class="result-card">
@@ -100,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const formSection = document.querySelector(".stepform");
     const homeBanner = document.querySelector(".home-banner");
+    const prevBtnHome = document.querySelector("#prevBtn-home");
 
     document.querySelectorAll(".custom-site-btn input[type='radio']").forEach(radio => {
         radio.addEventListener("change", function () {
@@ -116,6 +122,23 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 500);
         });
     });
+    prevBtnHome.addEventListener("click", function () {
+        window.location.reload();
+    formSection.style.transition = "opacity 0.5s ease-in-out";
+    formSection.style.opacity = "0";
+    
+    setTimeout(() => {
+        formSection.style.display = "none";
+        homeBanner.style.display = "block";
+        homeBanner.style.opacity = "0";
+        
+        setTimeout(() => {
+            homeBanner.style.transition = "opacity 0.5s ease-in-out";
+            homeBanner.style.opacity = "1";
+        }, 100);
+    }, 500);
+});
 
     formSection.style.display = "none";
+    
 });

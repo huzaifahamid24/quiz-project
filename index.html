@@ -43,13 +43,12 @@
        </div>
     </section>
     <section class="stepform" style="background-image: url(images/quiz-card-bg.png);">
+        <button class="btn prevBtn-home" id="prevBtn-home">Go back home</button>
         <div class="cus-container" id="formContainer">
             <h2>Achieve Your Dream Figure with Quick and Effective Workouts.</h2>
             <div class="progress-bar">
                 <div class="progress" id="progress"></div>
-            </div>
-           
-            
+            </div> 
             <div id="steps"></div>
             <div class="left-right-arrow">
             <button class="btn" id="prevBtn" onclick="prevStep()"><img src="images/left-arrow.png" alt=""></button>
@@ -57,27 +56,33 @@
             <button class="btn" id="nextBtn" onclick="nextStep()"><img src="images/right-arrow.png" alt=""></button>
         </div>
         </div>
-        
-       
-        
+         
         <div class="result-container hidden" id="resultContainer">
             <div class="text-content">
                 <h2>Achieve Your Dream Figure with Quick and Effective Workouts.</h2>
                 <p>Please wait while we match you with the best routine for maximum fat loss...</p>
-                <div class="progress-container" style="background-image: url('progress-bg.png');">
-                    
+                <!-- <div class="progress-container">
                     <div class="progress-text" id="progressText">0<span>%</span></div>
+                </div> -->
+                <div class="progress-container">
+                    <div class="progress-text" id="progressText">0<span>%</span></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="250" height="250" viewBox="0 0 250 250">
+                        <!-- Background Circle -->
+                        <circle cx="125" cy="125" r="110" fill="white" stroke="#E0E0F9" stroke-width="15"/>
+                        <!-- Animated Progress Circle -->
+                        <circle id="progressCircle" cx="125" cy="125" r="110" fill="none" stroke="#3EB8E5"
+                            stroke-width="15" stroke-linecap="round" 
+                            stroke-dasharray="691" stroke-dashoffset="691" 
+                            transform="rotate(-90 125 125)"/>
+                    </svg>
                 </div>
+                
             </div>
             
             <div class="image-container">
                 <img src="images/woman.png" alt="Workout Girl" width="100%">
             </div>
         </div>
-        
-        
-        
-        
     </section>
     
     <footer>
