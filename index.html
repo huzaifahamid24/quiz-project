@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Task</title>
+    <link rel="stylesheet" href="all.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <section class="home-banner" style="background-image: url('banner-img.png');">
+       <div class="container">
+        <div class="home-text">
+            <h1>Achieve Your Dream Figure with Quick and Effective Workouts.</h1>
+            <h3>Take this 30-second quiz to find out how</h3>
+            <div class="home-text-btn">
+               <form>
+                   <label class="custom-site-btn">
+                       <input type="radio" name="radio">
+                       <span class="checkmark"></span>
+                        <span><img src="images/female.svg" alt="">Women Start Here</span>
+                   </label>
+                   <label class="custom-site-btn">
+                    <input type="radio" name="radio">
+                    <span class="checkmark"></span>
+                     <span><img src="images/male.svg" alt="">Men Start Here</span>
+                </label>
+               </form>
+            </div>
+        </div>
+        <div class="home-banner-logos">
+            <img src="images/logo1.png">
+            <img src="images/logo2.png">
+            <img src="images/logo3.png">
+            <img src="images/logo4.png">
+            <img src="images/logo5.png">
+        </div>
+        <div class="mobile-logos home-banner-logos">
+            <img src="mobile-logos.png" alt="">
+        </div>
+       </div>
+    </section>
+    <section class="stepform" style="background-image: url(images/quiz-card-bg.png);">
+        <div class="cus-container" id="formContainer">
+            <h2>Achieve Your Dream Figure with Quick and Effective Workouts.</h2>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+           
+            
+            <div id="steps"></div>
+            <div class="left-right-arrow">
+            <button class="btn" id="prevBtn" onclick="prevStep()"><img src="images/left-arrow.png" alt=""></button>
+            <span id="stepCounter">1/5</span>
+            <button class="btn" id="nextBtn" onclick="nextStep()"><img src="images/right-arrow.png" alt=""></button>
+        </div>
+        </div>
+        
+       
+        
+        <div class="result-container hidden" id="resultContainer">
+            <div class="text-content">
+                <h2>Achieve Your Dream Figure with Quick and Effective Workouts.</h2>
+                <p>Please wait while we match you with the best routine for maximum fat loss...</p>
+                <div class="progress-container" style="background-image: url('progress-bg.png');">
+                    
+                    <div class="progress-text" id="progressText">0<span>%</span></div>
+                </div>
+            </div>
+            
+            <div class="image-container">
+                <img src="images/woman.png" alt="Workout Girl" width="100%">
+            </div>
+        </div>
+        
+        
+        
+        
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-row-upper">
+                <p>© 2024 Cool Company, All Rights Reserved</p>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>Content, images, and assets on this site may not be reproduced, transmitted, cached, distributed, or used in any way without prior written consent. This site does not offer professional medical advice or services. The ideas, procedures, and suggestions provided here are not a substitute for consulting your physician and should be used only as part of planning your overall health and fitness plan with medical supervision. Our Terms of Service limit liability, and you must read and agree to them before using this site. This information is not intended to diagnose, treat, cure, or prevent any disease. Your results may differ from any claims or testimonials. Typical results are not guaranteed; most people do not achieve results because they do not take consistent action. The examples shown are of individuals who made lifestyle changes and are not typical. Achieving results requires commitment and adherence to a plan</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/custom.js"></script>
+</body>
+</html>
