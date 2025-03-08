@@ -105,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const formSection = document.querySelector(".stepform");
     const homeBanner = document.querySelector(".home-banner");
-    const prevBtnHome = document.querySelector("#prevBtn-home");
 
     document.querySelectorAll(".custom-site-btn input[type='radio']").forEach(radio => {
         radio.addEventListener("change", function () {
@@ -122,23 +121,28 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 500);
         });
     });
-    prevBtnHome.addEventListener("click", function () {
-        window.location.reload();
-    formSection.style.transition = "opacity 0.5s ease-in-out";
-    formSection.style.opacity = "0";
-    
-    setTimeout(() => {
-        formSection.style.display = "none";
-        homeBanner.style.display = "block";
-        homeBanner.style.opacity = "0";
-        
-        setTimeout(() => {
-            homeBanner.style.transition = "opacity 0.5s ease-in-out";
-            homeBanner.style.opacity = "1";
-        }, 100);
-    }, 500);
-});
 
     formSection.style.display = "none";
     
 });
+function prevStep() {
+    if (currentStep > 0) {
+        currentStep--;
+        renderStep();
+    } else {
+        // Navigate back to the home page
+        const formSection = document.querySelector(".stepform");
+        const homeBanner = document.querySelector(".home-banner");
+
+        formSection.style.transition = "opacity 0.5s ease-in-out";
+        formSection.style.opacity = "0";
+        setTimeout(() => {
+            formSection.style.display = "none";
+            homeBanner.style.display = "block";
+            setTimeout(() => {
+                homeBanner.style.transition = "opacity 0.5s ease-in-out";
+                homeBanner.style.opacity = "1";
+            }, 100);
+        }, 500);
+    }
+}
